@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="so" value="搜索">
+	<script>
+		var s=document.getElementById('so');
+		var v=s.value;
+		// 输入框中的原始值
+		// 鼠标点击输入框的时候，输入框内容清空，2.鼠标点击输入框的时候，输入框内容回复原样
+		s.onfocus=function () {
+			s.value='';
+		
+		}
+		s.onfocus=function () {
+			s.value=v;
+		
+		}
+
+	</script>
+</body>
+</html>

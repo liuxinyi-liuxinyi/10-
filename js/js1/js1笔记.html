@@ -1,0 +1,156 @@
+<!--
+HTML/HTML5结构
+CSS/CSS3 表现、外观
+JavaScript JS 行为、交互操作
+异步交互（AJAX）也是通过JS完成
+代码书写顺序：先编写基本HTML+CSS代码，然后添加JS代码
+JS能够实现的效果：控制HTML和CSS
+JS的交互操作通过事件触发
+事件：用户的操作
+On 在...时，当...时
+例如：
+1.onclick 在单击时click
+2.onmouseover ->on mouse over当鼠标悬停在元素时
+3.onmouseout ->on mouse out 当鼠标从元素上离开时
+4.onfocus 获得焦点
+5.onblur 失去焦点
+getElementById 通过id获取网页元素，获得到的元素数量0或1
+给获取到的元素起个名字，可以使用变量
+元素触发事件执行指定代码的格式
+元素.on事件=function () {
+	执行的代码
+}
+js代码简要执行步骤
+1.获取要操作的元素
+2.给指定元素添加事件及事件处理函数
+js事件处理过程
+1.响应用户操作
+2.对页面元素进行某种修改
+修改元素的CSS的样式
+元素.style.css属性名='属性值'
+修改的具体CSS属性如果是带有连字符（-）的，需要把连字符去掉，连字符之后的第一个字母变大写
+判断/分支结构，根据不同的情况执行不同的代码
+if(条件){如果
+	条件成立、满足条件时执行的代码
+}else{ 否则
+	条件不成立、不满足条件时执行的代码
+}
+=和==的区别
+=是赋值，把等号左侧的值给等号右侧
+==是比较，判断等号两边是否相等
+元素.style.xxx获取的是元素的内联样式(在元素标签里style属性的属性值),获取 不到内嵌或外部样式。
+元素.xxx获取的是元素的xxx属性的值
+元素.xxx=yyy设置元素的xxx属性的值为yyy
+在事件处理函数中，若果需要执行操作的元素事发生事件的元素自身，可以将函数中的元素用this代替
+例如：
+s.onfocus=function () {
+	s.value=''
+}
+可以改写为
+s.onfocus=function () {
+	this.value='';// s换成了this
+}
+设置a的链接的href属性值javascropt:void(0);或者javascropt:;可以消除a链接的默认点击效果，形成"空链接"
+js中常用有三种输出方式
+1.console.log(需要输出的信息)在控制台显示信息，一般用于调试代码
+2.document.write(需要输出的信息)在页面显示信息
+3.alert(需要输出的信息)以警告框方式显示信息
+JS中的注释
+1.单行注释//注释符号之后的内容都是注释
+2.多行注释/*  */注释符号之间的内容是注释
+单行注释使用的更多一些，多行注释不能嵌套使用
+若果需要通过JS给网页元素添加多个css样式，可以反复设置style，也可以给网页元素设置class，但是class这个词在JS中有特殊作用，所以需要使用className来设置class
+设置图片元素的src值，可以修改图片元素显示内容
+按照元素标签名字获取元素信息，使用getElementsByTagName,可以得到一组同标签名的元素
+如果需要反复执行类似代码，可以将需要执行的代码放到循环结构中
+循环结构格式：
+for(初始值;执行条件;增值){
+	需要反复执行的代码
+}
++号的两种用法
+1.加法运算
+2.字符连接
+i=i+1可以简化为i++，表示将i变量的值自增1
+i=i-1可以简化为i- -，表示将i变量的值自减1
+++自增1，有两种写法i++和++i
+- -自减1，有两种写法i- -和- -i
+符号在后a++,先用在加，符号在前++a，先加在用
+%取余，模运算，两数相除的余数，可以判断一个数字是否是另一个数字的整倍数
+不同的数字在条件判断中可以被识别为true或false；数字0为false，非0位true
+三木运算符/三元运算符，格式：判断条件？条件为真执行的代码：条件为假执行的代码
+运算符有优先级(例如：先乘后除后加减)
+，如果想改变运算符优先级，可以使用小括号
+循环结构，除了for循环，还有while循环和do...while循环
+初始值
+while(执行条件){
+	需要反复执行的代码
+	增量
+}
+初始值
+do{
+	需要反复执行的代码
+	增量
+}(执行条件)
+for和while是前(先)测试循环，如果不满足条件，一次也执行不了
+do...while是后测试循环，至少能执行一次
+for定数循环(循环次数确定的)
+while不定数循环(循环次数不确定)
+i=i+n 可以简化为i+=n
+x=x?y 可以简化为x?y （?可以是+ - * / 等运算符）
+获取网页元素的几种方式
+通过id,getElemetById(id)
+通过HTML标签名称，getElementsByTagName(标签名称)
+通过class,getElementsByClassName(class)
+通过name，getElementsByName(name)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#a{
+			border: 3px solid red;
+			width: 160px;
+			padding: 5px;
+			border-radius: 10px;/* 圆角 */
+			cursor: pointer;/* 鼠标滑过之后有个手的形状 */
+			margin: 0 auto;
+			text-align: center;
+			font-weight: bold;
+			/* font-weight:normal; */
+			font-color:red;
+		}
+		#b{
+			width: 320px;
+			border: 1px solid blue;
+			padding: 10px;
+			border-radius: 20px;
+			display: none;/* 隐藏 */
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="a">点击之后显示隐藏内容</div>
+	<div id="b">点击之显示的信息后点击之显示的信息后点击之显示的信息后</div>
+	<!-- js写在这里 -->
+	<script>
+		// 1.获取操作的页面元素，并且保存到一个标示符（变量）中
+		// 获取id为a的元素，保存到名称为a的变量中
+		// getElementById(通过id获取网页上的元素，获取到的元素数量0或1)
+		var a=document.getElementById('a');
+		// 获取id为b的元素，保存到名称为	b的变量中
+		var b=document.getElementById('b');
+		// 点击a的时候，让b显示在页面上
+		a.onclick=function () {
+			b.style.display='block';
+			// 让	b的样式中的display属性值设置为block显示
+		}
+		// a.onclick=function () {
+		// 	b.style.display='none';
+			// 让	b的样式中的display属性值设置为none隐藏
+		// }
+	</script>
+</body>
+</html>

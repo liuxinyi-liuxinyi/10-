@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+<style >
+	table, td{
+		border: 1px solid blue;
+	}
+	table{
+		border-collapse: collapse;
+	}
+	td{
+		padding: 5px 20px 5px 10px;
+	}
+</style>
+</head>
+<body>
+	<script>
+		document.write("<table>");
+		for(var i=1;i<=9;i++){
+					document.write('<tr>')
+			for(var y=1;y<=9;y++){
+				document.write('<td>');
+				if(y<=i){
+					// 列小与行的时候输出信息
+					document.write(y+"&times;"+i+"="+y*i);
+				}else{
+				document.write('&nbsp;')
+			}
+			document.write('</td>');
+			}
+			document.write('</tr>')
+		}
+		document.write('</table>');
+		var a=1;
+		var b=2;
+		document.write("c="+a+b);
+
+	</script>
+</body>
+</html>

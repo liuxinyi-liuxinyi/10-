@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#a{
+			border: 3px solid red;
+			width: 160px;
+			padding: 5px;
+			border-radius: 10px;/* 圆角 */
+			cursor: pointer;/* 鼠标滑过之后有个手的形状 */
+			margin: 0 auto;
+			text-align: center;
+			font-weight: bold;
+			/* font-weight:normal; */
+			font-color:red;
+		}
+		#b{
+			width: 320px;
+			border: 1px solid blue;
+			padding: 10px;
+			border-radius: 20px;
+			display: none;/* 隐藏 */
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="a">点击之后显示隐藏内容</div>
+	<div id="b">点击之显示的信息后点击之显示的信息后点击之显示的信息后</div>
+	<!-- js写在这里 -->
+	<script>
+		var a=document.getElementById('a');
+		var b=document.getElementById('b');
+		// 
+		// 点击a，如果b是隐藏的，就让b显示，否则就让b隐藏
+		// a.onclick=function () {
+		// 	if(b.style.display=='none') {
+		// 		b.style.display='block'
+		// 	}else{
+		// 			b.style.display="none"
+		// 		}
+		// 	}
+		// 点击a，如果b是显示的，就让b隐藏，否则就让b显示
+		a.onclick=function () {
+			if(b.style.display=='block') {
+				b.style.display='none'
+			}else{
+					b.style.display="block"
+				}
+			}
+		
+
+	</script>
+</body>
+</html>
